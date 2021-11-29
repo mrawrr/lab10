@@ -1,0 +1,65 @@
+---
+title: "Lab 10 - Last One Ever"
+author: "Meghna Rao"
+date: "11/29/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(beepr)
+library(tidyverse)
+library(praise)
+library(cowsay)
+library(sf)
+library(paletteer)
+library(janitor)
+library(usethis)
+```
+
+
+## Beepr beeps
+
+you can have r code that takes days to run. you might like to have a sound go off when the code is done running. 
+Use `beep()` to give yourself an audio alert. Test the sound in the console
+
+## for loop + beep
+
+for loop is usually functions built in that do it for you.
+
+```{r, eval = FALSE}
+# want to create a sequence that goes from 1 - 99 and reverse reverse
+# rev wraps it in a reverse function rev
+# for each element i in this sequence rev(seq(1:99))
+# paste function puts things together in more than a string
+for (i in rev(seq(1:9999))) {
+  print(paste(i, "bottles of beer on the wall")) # print(i) just prints the numbers and paste will put in the element
+  
+}
+
+beep(21)
+```
+
+## Praise - positive messages only
+
+`praise()` to specify template pieces that will be randomly selected `${}` and squiggly blankets needs a gramatical phrase that praise recognizes
+
+```{r}
+praise("${EXCLAMATION}!!! This code works ${adverb_manner}!")
+
+praise("Holy ${creating}, Batman - this code works ${ADVERB_MANNER}!")
+
+beep(99)
+```
+
+```{r}
+say("I love tacos!", by = "trilobite", what_color = "blue", by_color = "yellow")
+```
+
+## usethis for everything
+
+used to store personal access token and for initial set up
+allison's fav package
+here to make our lives easier
+
+`usethis::edit_r_profile()` in the console
